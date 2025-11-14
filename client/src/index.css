@@ -1,0 +1,33 @@
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #69DDFF;
+  font-family: 'Pangolin', 'Courier New', cursive;
+  margin: 0;
+
+}
+
+.footer {
+  justify-content: center;
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+#root {
+  display: block;
+}
+
+div {
+  display: flex;
+}
+
+@media (max-width: 1460px) {
+  html { font-size: 12px; }
+}
+@media (max-width: 1060px) {
+  html { font-size: 9px; }
+}
+@media (max-width: 780px) {
+  html { font-size: 6px; }
+}

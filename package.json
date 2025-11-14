@@ -1,0 +1,53 @@
+{
+  "main": "dist/server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true yarn --cwd client install && yarn --cwd client build",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "postinstall": "tsc -p ./",
+    "build": "tsc -p ./",
+    "build:local": "tsc -p ./ -w",
+    "start": "node .",
+    "start:local": "concurrently --kill-others \"yarn run build:local\" \"nodemon .\""
+  },
+  "engines": {
+    "node": ">=18.14.2"
+  },
+  "keywords": [],
+  "author": "TRtheGreat",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.2.0",
+    "express-xss-sanitizer": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.3.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/mongoose": "^5.11.97",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^42.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "tslint": "^6.1.3",
+    "typescript": "*"
+  }
+}
